@@ -13,21 +13,21 @@ const app = express()
 const static = require("./routes/static")
 const expressLayouts = require("express-ejs-layouts")
 
-// const livereload = require("livereload")
-// const connectLiveReload = require("connect-livereload")
+const livereload = require("livereload")
+const connectLiveReload = require("connect-livereload")
 
  
 
 /* ***********************
  * LiveReload Server Setup
  *************************/
-// const liveReloadServer = livereload.createServer();
-// liveReloadServer.watch(__dirname + "/public");
-// liveReloadServer.server.once("connection", () => {
-//   setTimeout( () => {
-//     liveReloadServer.refresh("/")
-//   }, 100);
-// });
+const liveReloadServer = livereload.createServer();
+liveReloadServer.watch(__dirname + "/public");
+liveReloadServer.server.once("connection", () => {
+  setTimeout( () => {
+    liveReloadServer.refresh("/")
+  }, 100);
+});
 
 
 /* ***********************
@@ -41,7 +41,7 @@ app.set("layout", "./layouts/layout") // path to find all layouts
 /* ***********************
  * Middleware for LiveReload
  *************************/
-// app.use(connectLiveReload())
+app.use(connectLiveReload())
 
 
 /* ***********************
