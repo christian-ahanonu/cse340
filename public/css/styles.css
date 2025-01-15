@@ -3,4 +3,227 @@
 *:before,
 *:after {
   box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+
+:root {
+
+  --primary-color: #023047;
+  --secondar-color: #FFB703;
+  --accent-color1: #219EBC;
+  --accent-color2: #8ECAE6;
+  --accent-color3: #FB8500;
+  --rich-black: #101820;
+
+  font-family: 'Poppins', 'Raleway', sans-serif;
+  font-size: 16px;
+  color: var(--rich-black);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Raleway', 'Poppins', sans-serif;
+}
+
+a {
+  text-decoration: none;
+  font-family: 'Raleway', 'Poppins', sans-serif;
+}
+
+li {
+  list-style: none;
+}
+
+
+
+
+
+#top-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 17px;
+}
+
+#top-header span a {
+  font-size: 30px;
+  font-weight: 700;
+  color: var(--rich-black);
+}
+
+
+#tools a {
+  text-decoration: underline 1px var(--rich-black);
+  color: var(--rich-black);
+}
+
+nav {
+  margin: 8px 0;
+  content: icon;
+}
+
+nav ul {
+  display: flex;
+  justify-content: space-evenly;
+  background-color: var(--primary-color);
+  color: white;
+  padding: 17px;
+}
+
+
+nav li:hover {
+  cursor: pointer;
+  text-decoration: underline 1px;
+}
+
+#hero-section {
+  background: url('/images/vehicles/delorean.jpg') no-repeat center center;
+  background-size: contain;
+  width: auto;
+  height: 300px;
+  padding: 17px;
+  display: flex;
+  flex-direction: column;
+}
+
+#hero-section h1 {
+  padding-bottom: 20px;
+}
+
+#hero-section .dmc-con {
+  background-color: rgb(142, 202, 230, .3);
+  width: 200px;
+  padding: 10px;
+  line-height: 1.5;
+}
+
+.own {
+  width: 100px;
+  height: 60px;
+  padding-top: 8px;
+
+}
+
+.own img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+
+
+
+#up-reviews {
+  padding: 17px;
+  display: flex;
+  flex-direction: column;
+  gap: 35px;
+}
+
+.reviews ul {
+  line-height: 2;
+}
+
+.reviews li {
+  list-style-type: disc;
+  list-style-position: inside;
+}
+
+.reviews h2 {
+  padding-bottom: 15px;
+}
+
+.reviews,
+.upgrades {
+  width: 100%;
+}
+
+.upgrades .upg-items {
+  display: grid;
+  grid: auto/1fr 1fr;
+  gap: 20px;
+}
+
+.upgrades h2 {
+  padding-bottom: 20px;
+}
+
+
+
+.fig-items div {
+  width: 100%;
+  height: 120px;
+  background-color: var(--primary-color);
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+}
+
+figcaption {
+  text-align: center;
+  padding-top: 5px;
+}
+
+figcaption a {
+  text-decoration: underline 1px var(--rich-black);
+  color: var(--rich-black);
+  font-family: 'Poppins', 'Raleway', sans-serif;
+  
+}
+
+
+footer {
+  text-align: center;
+  margin-top: 20px;
+  padding: 30px 0;
+  font-weight: 600;
+}
+
+
+
+@media screen and (min-width: 1200px) {
+
+  body {
+    background: url('/images/site/small_check.jpg') no-repeat center center;
+    background-size: cover;
+    padding: 20px 0
+  }
+
+  #wrapper {
+    margin: 0 auto;
+    max-width: 1000px;
+    background-color: white;
+    border: 6px solid var(--primary-color);
+    border-radius: 5px;
+  }
+
+  #up-reviews {
+    flex-direction: row-reverse;
+    justify-content: center;
+  }
+
+  #hero-section .dmc-con {
+    margin-left: 50px;
+  }
+
+  #hero-section {
+    height: 350px;
+    margin: 30px 0;
+  }
+
+
+
+
+
+
+
+
 }

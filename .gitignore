@@ -14,3 +14,12 @@ node_modules
 
 # .DS_Store is only for Mac users
 **/.DS_Store
+
+# testing out git ignore with the README.md file
+# README.md
+
+# ignore node_modules | Only for local use.
+node_modules
+
+# ignore pnpm-lock.yaml | Only for local use.
+pnpm-lock.yaml
