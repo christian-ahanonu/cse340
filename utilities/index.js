@@ -110,10 +110,7 @@ Util.buildVehicleDetail = async function(data) {
       <li> <strong> ${data.inv_make} ${data.inv_model} Details </strong></li>
 
       <li> <strong>Price:</strong> 
-          ${new Intl.NumberFormat("en-US", {
-              minimumFractionDigits: 0,
-              maximumFractionDigits: 2,
-          }).format(data.inv_price)}
+          $${new Intl.NumberFormat("en-US").format(data.inv_price)}
       </li>
 
       <li> <strong>Description:</strong> ${data.inv_description}</li>
