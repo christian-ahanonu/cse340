@@ -18,9 +18,7 @@ if (process.env.NODE_ENV == "development") {
   });
 
 
-  // Added for troubleshooting queries
-  // during development
-
+  // Added for troubleshooting queries during development
   module.exports = {
     async query(text, params) {
       try {

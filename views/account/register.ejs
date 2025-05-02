@@ -1,0 +1,52 @@
+<% if (title) { %>
+    <h1 class="register-title"> <%= title%> </h1>
+<% } else {
+    res.redirect('/')
+} %>
+
+
+<%- messages() %>
+
+
+<% if (errors) { %>
+    <ul class="notice">
+        <% errors.array().forEach(error => { %>
+            <li><%= error.msg %></li>
+        <% }) %>
+   </ul>
+<% } %>
+
+
+
+<fieldset id="register-form">
+    <form action="/account/register" method="post">
+
+        <label for="firstName">First name
+            <input type="text" name="account_firstname" id="email" value="<%= locals.account_firstname %>" required>
+        </label>
+
+        <label for="lastName">Last name
+            <input type="text" name="account_lastname" id="lastName" value="<%= locals.account_lastname %>" required>
+        </label>
+
+        <label for="email">Email address
+            <input type="email" name="account_email" id="email" value="<%= locals.account_email %>" required>
+        </label>
+
+        <label for="password">Password
+            <input type="password" name="account_password" id="password" pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{12,}$" required>
+        </label>
+
+        <div class="pass-req">
+            <p>
+                Password must be a mininum of 12 characters in length,<br>
+                contain at least 1 capital letter <br>
+                contain at least 1 number <br>
+                contain at least 1 special character <br>
+            </p>
+        </div>
+
+        <button type="submit">Register</button>
+        
+    </form>
+</fieldset>

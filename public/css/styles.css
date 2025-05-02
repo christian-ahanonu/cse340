@@ -77,6 +77,8 @@ nav ul {
   justify-content: space-evenly;
   background-color: var(--primary-color);
   padding: 17px;
+  gap: 5px;
+  font-size: .9rem;
 }
 
 
@@ -97,6 +99,12 @@ nav li:hover {
 
 #hero-section h1 {
   padding-bottom: 20px;
+}
+
+.notice {
+  color: var(--accent-color3);
+  padding: 20px;
+  font-weight: 600;
 }
 
 #hero-section .dmc-con {
@@ -183,6 +191,19 @@ figcaption a {
 }
 
 
+footer {
+  text-align: center;
+  margin-top: 20px;
+  padding: 30px 0;
+  font-weight: 600;
+}
+
+
+
+
+
+
+
 /* Styling for the vehicle display */
 #inv-display {
   display: flex;
@@ -242,13 +263,10 @@ figcaption a {
   padding: 20px;
 }
 
-.col1 {
-  width: 100%;
-}
-
 .col1 img {
   width: 100%;
-  height: auto;
+  height: 100%;
+  object-fit: contain;
 }
 
 .col2 li {
@@ -262,18 +280,165 @@ figcaption a {
 }
 
 
+/* Styling for login form  */
+.login-title, 
+.register-title, 
+.addclass-title, 
+.inventory-title {
+  font-size: 1.2rem;
+  margin-left: 20px;
+  padding: 10px 0;
+}
 
+#login-form, 
+#register-form, 
+#addclass-form, 
+#inventory-form {
+  border: 1px solid var(--primary-color);
+  border-radius: 6px;
+  padding: 20px;
+  margin: 0 20px;
+}
 
+#login-form form, 
+#register-form form, 
+#addclass-form form, 
+#inventory-form form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;  
+}
 
+#login-form form input, 
+#register-form input, 
+#addclass-form input, 
+#inventory-form input {
+  margin-bottom: 20px;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid var(--primary-color);
+  font-family: 'Poppins', 'Raleway', sans-serif;
+}
 
-footer {
-  text-align: center;
+#login-form form label, 
+#register-form label, 
+#addclass-form label, 
+#inventory-form label {
+  font-weight: 500;
+  display: flex;
+  flex-direction: column;
+
+}
+
+.no-account {
   margin-top: 20px;
-  padding: 30px 0;
-  font-weight: 600;
+  text-align: center;
+  margin-top: 30px;
+
+}
+
+.no-account a {
+  color: var(--primary-color);
+  text-decoration: underline 1px var(--primary-color);
+}
+
+#login-form form button, 
+#register-form button, 
+#addclass-form button, 
+#inventory-form button {
+  padding: 10px 0;
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 120px;
+  margin: 0 auto;
+  font-family: 'Poppins', 'Raleway', sans-serif;
 }
 
 
+/* Styling for registeration form  */
+
+#register-form button {
+  margin-top: 20px;
+}
+
+
+.pass-req p {
+  font-style: italic;
+  font-size: .8rem;
+}
+
+.pass-req {
+  padding: 10px 0;
+}
+
+.success, 
+.failed, 
+.errors {
+  text-align: left;
+  /* padding-bottom: 10px; */
+  margin-bottom: 10px;
+  padding: 20px;
+  color: var(--accent-color3);
+  /* max-width: 450px; */
+  /* margin: 0 auto; */
+}
+
+
+/* Styling for vehicle management page  */
+.mag-title {
+  font-size: 1.5rem;
+  margin-left: 20px;
+  padding: 20px 0;
+}
+
+.mag-links {
+  border-radius: 6px;
+  padding: 20px;
+  margin: 0 20px;
+  background-color: var(--primary-color);
+}
+
+.mag-links a {
+  color: white;
+  text-decoration: underline 1px white;
+}
+
+
+/* Styling for add classification form  */
+#addclass-form {
+  line-height: 2;
+}
+
+#addclass-form button {
+  width: 170px;
+  padding: 15px 0;
+  margin-left: 0;
+}
+
+/* Styling for add inventory/add vehicle form  */
+#inventory-form textarea {
+  height: 200px;
+  margin-bottom: 20px;
+  resize: vertical;
+  padding: 10px;
+  font-family: 'Poppins', 'Raleway', sans-serif;
+  border-radius: 6px;
+}
+
+#inventory-form i {
+  line-height: 3;
+}
+
+#classificationList {
+  padding: 10px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  border: 1px solid var(--primary-color);
+  font-family: 'Poppins', 'Raleway', sans-serif;
+}
 
 
 
@@ -325,6 +490,34 @@ footer {
     max-width: 800px;
     margin: 0 auto;
     justify-content: center;
+  }
+
+  #login-form, 
+  #register-form, 
+  #addclass-form, 
+  #inventory-form
+  {
+    max-width: 450px;
+    margin: 0 auto;
+  }
+  
+  #inventory-form,
+  .notice {
+    max-width: 600px;
+    
+  }
+
+  .login-title, 
+  .register-title, 
+  .addclass-title, 
+  .inventory-title {
+    text-align: center;
+  }
+
+  .notice {
+    padding: 15px 0;
+    text-align: left;
+    margin: 0 auto;
   }
 
 }
