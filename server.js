@@ -18,12 +18,12 @@ const connectLiveReload = require("connect-livereload")
 const baseController = require("./controllers/baseController")
 const inventoryRoute = require("./routes/inventoryRoute")
 const accountRoute = require("./routes/accountRoute")
-// const addItemRoute = require("./routes/addItemRoute")
 
 const utilities = require("./utilities/")
 const session = require("express-session")
 const pool = require("./database/")
 const bodyParser = require("body-parser")
+const cookieParser = require("cookie-parser")
 
 
  
@@ -76,9 +76,14 @@ app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({extended: true})) // for parsing application/x-www-form-urlencoded
 
 
-// Middleware for LiveReload
+// Cookie parser Middleware
+app.use(cookieParser())
+
+// LiveReload Middleware
 app.use(connectLiveReload())  
 
+// JWT webtoken check
+app.use(utilities.checkJWTToken)
 
 
 
@@ -94,7 +99,7 @@ app.get("/", utilities.handleErrors(baseController.buildHome))
 app.use("/inv", inventoryRoute)
 
 // Create account route
-app.use("/account",  accountRoute)
+app.use("/account", accountRoute)
 
 
 // File Not Found Route - must be last route in list
@@ -122,7 +127,7 @@ app.use(async (err, req, res, next) => {
     message = 'Oh no! There was a crash. Maybe try a different route?'}
   
   res.render("errors/error", {
-    title: err.status || 'Server Error',
+    title: err.status || 'Server Error:',
     message,
     nav
   })

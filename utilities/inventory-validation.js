@@ -2,7 +2,11 @@ const utilities = require(".")
 const { body, validationResult } = require('express-validator');
 const validate = {};
 
-validate.addClassificationRules = () => {
+
+/*  **********************************
+ *  Classification Data Validation Rules
+ * ********************************* */
+validate.classificationRules = () => {
     return [
         body("classification_name")
         .trim()
@@ -12,7 +16,11 @@ validate.addClassificationRules = () => {
     ]
 }
 
-validate.addInventoryRules = () => {
+
+/*  **********************************
+ *  Inventory Data Validation Rules
+ * ********************************* */
+validate.inventoryRules = () => {
     return [
         body("classification_id")
         .isNumeric()
@@ -66,33 +74,83 @@ validate.addInventoryRules = () => {
 }
 
 
+/*  **********************************
+ *  Check data and return errors or continue to registration
+ * ********************************* */ 
+validate.checkInventoryData = async (req, res, next) => {
+    const errors = validationResult(req);
 
-validate.checkData = async (req, res, next) => {
-    const errors = validationResult(req)
+    if (!errors.isEmpty()) {
+        if (req.originalUrl.includes("add-inventory")) {
+            const classificationList = await utilities.buildClassificationList(
+                req.body.classification_id
+            );
 
-    if(!errors.isEmpty()) {
-
-        if (req.originalUrl.includes('add-inventory')) {
-            const classificationList = await utilities.buildClassificationList(req.body.classification_id)
-            
-            res.render('inventory/add-inventory', {
+            res.render("inventory/add-inventory", {
                 errors: errors.array(),
-                title: 'Add New Vehicle',
+                title: "Add New Vehicle",
                 nav: await utilities.getNav(),
                 classificationList,
-                ...req.body
-            })
-            
+                ...req.body,
+            });
         } else {
-            res.render('inventory/add-classification', {
+            res.render("inventory/add-classification", {
                 errors: errors.array(),
-                title: 'Add New Classification',
+                title: "Add New Classification",
                 nav: await utilities.getNav(),
-            })
+            });
         }
-        return
+        return;
     }
-    next()
+    next();
+};
+
+/* ******************************
+ * Check data and return to edit view if errors exist
+ * ***************************** */
+validate.checkUpdateData = async (req, res, next) => {
+    const {
+        inv_id,
+        inv_make,
+        inv_model,
+        inv_year,
+        inv_description,
+        inv_image,
+        inv_thumbnail,
+        inv_price,
+        inv_miles,
+        inv_color,
+        classification_id,
+    } = req.body;
+    let errors = validationResult(req);
+
+    if (!errors.isEmpty()) {
+        const nav = await utilities.getNav();
+        const classificationList = await utilities.buildClassificationList(
+            classification_id
+        );
+        const itemName = `${inv_make} ${inv_model}`;
+
+        res.render("inventory/edit-inventory", {
+            errors,
+            title: "Edit " + itemName,
+            nav,
+            classificationList,
+            inv_id,
+            inv_make,
+            inv_model,
+            inv_year,
+            inv_description,
+            inv_image,
+            inv_thumbnail,
+            inv_price,
+            inv_miles,
+            inv_color,
+            classification_id,
+        });
+        return;
+    }
+    next();
 };
 
 

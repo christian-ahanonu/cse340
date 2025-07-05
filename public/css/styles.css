@@ -2,24 +2,24 @@
 *,
 *:before,
 *:after {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
 }
 
 
 :root {
 
-  --primary-color: #023047;
-  --secondar-color: #FFB703;
-  --accent-color1: #219EBC;
-  --accent-color2: #8ECAE6;
-  --accent-color3: #FB8500;
-  --rich-black: #101820;
+	--primary-color: #023047;
+	--secondar-color: #FFB703;
+	--accent-color1: #219EBC;
+	--accent-color2: #8ECAE6;
+	--accent-color3: #FB8500;
+	--rich-black: #101820;
 
-  font-family: 'Poppins', 'Raleway', sans-serif;
-  font-size: 16px;
-  color: var(--rich-black);
+	font-family: 'Poppins', 'Raleway', sans-serif;
+	font-size: 16px;
+	color: var(--rich-black);
 }
 
 h1,
@@ -28,16 +28,16 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: 'Raleway', 'Poppins', sans-serif;
+	font-family: 'Raleway', 'Poppins', sans-serif;
 }
 
 a {
-  text-decoration: none;
-  font-family: 'Raleway', 'Poppins', sans-serif;
+	text-decoration: none;
+	font-family: 'Raleway', 'Poppins', sans-serif;
 }
 
 li {
-  list-style: none;
+	list-style: none;
 }
 
 
@@ -45,157 +45,157 @@ li {
 
 
 #top-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 17px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 17px;
 }
 
 #top-header span a {
-  font-size: 30px;
-  font-weight: 700;
-  color: var(--rich-black);
+	font-size: 30px;
+	font-weight: 700;
+	color: var(--rich-black);
 }
 
 
 #tools a {
-  text-decoration: underline 1px var(--rich-black);
-  color: var(--rich-black);
+	text-decoration: underline 1px var(--rich-black);
+	color: var(--rich-black);
 }
 
 nav {
-  margin: 8px 0;
+	margin: 8px 0;
 }
 
 nav a {
-  color: white;
-  font-weight: 500;
+	color: white;
+	font-weight: 500;
 }
 
 nav ul {
-  display: flex;
-  justify-content: space-evenly;
-  background-color: var(--primary-color);
-  padding: 17px;
-  gap: 5px;
-  font-size: .9rem;
+	display: flex;
+	justify-content: space-evenly;
+	background-color: var(--primary-color);
+	padding: 17px;
+	gap: 5px;
+	font-size: .9rem;
 }
 
 
 nav li:hover {
-  cursor: pointer;
-  text-decoration: underline 1px;
+	cursor: pointer;
+	text-decoration: underline 1px;
 }
 
 #hero-section {
-  background: url('/images/vehicles/delorean.jpg') no-repeat center center;
-  background-size: contain;
-  width: auto;
-  height: 300px;
-  padding: 17px;
-  display: flex;
-  flex-direction: column;
+	background: url('/images/vehicles/delorean.jpg') no-repeat center center;
+	background-size: contain;
+	width: auto;
+	height: 300px;
+	padding: 17px;
+	display: flex;
+	flex-direction: column;
 }
 
 #hero-section h1 {
-  padding-bottom: 20px;
+	padding-bottom: 20px;
 }
 
 .notice {
-  color: var(--accent-color3);
-  padding: 20px;
-  font-weight: 600;
+	color: var(--accent-color3);
+	padding: 20px;
+	font-weight: 600;
 }
 
 #hero-section .dmc-con {
-  background-color: rgb(142, 202, 230, .3);
-  width: 200px;
-  padding: 10px;
-  line-height: 1.5;
+	background-color: rgb(142, 202, 230, .3);
+	width: 200px;
+	padding: 10px;
+	line-height: 1.5;
 }
 
 .own {
-  width: 100px;
-  height: 60px;
-  padding-top: 8px;
+	width: 100px;
+	height: 60px;
+	padding-top: 8px;
 
 }
 
 .own img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
+	width: 100%;
+	height: 100%;
+	object-fit: contain;
 }
 
 
 
 
 #up-reviews {
-  padding: 17px;
-  display: flex;
-  flex-direction: column;
-  gap: 35px;
+	padding: 17px;
+	display: flex;
+	flex-direction: column;
+	gap: 35px;
 }
 
 .reviews ul {
-  line-height: 2;
+	line-height: 2;
 }
 
 .reviews li {
-  list-style-type: disc;
-  list-style-position: inside;
+	list-style-type: disc;
+	list-style-position: inside;
 }
 
 .reviews h2 {
-  padding-bottom: 15px;
+	padding-bottom: 15px;
 }
 
 .reviews,
 .upgrades {
-  width: 100%;
+	width: 100%;
 }
 
 .upgrades .upg-items {
-  display: grid;
-  grid: auto/1fr 1fr;
-  gap: 20px;
+	display: grid;
+	grid: auto/1fr 1fr;
+	gap: 20px;
 }
 
 .upgrades h2 {
-  padding-bottom: 20px;
+	padding-bottom: 20px;
 }
 
 
 
 .fig-items div {
-  width: 100%;
-  height: 120px;
-  background-color: var(--primary-color);
-  text-align: center;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 5px;
+	width: 100%;
+	height: 120px;
+	background-color: var(--primary-color);
+	text-align: center;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 5px;
 }
 
 figcaption {
-  text-align: center;
-  padding-top: 5px;
+	text-align: center;
+	padding-top: 5px;
 }
 
 figcaption a {
-  text-decoration: underline 1px var(--rich-black);
-  color: var(--rich-black);
-  font-family: 'Poppins', 'Raleway', sans-serif;
-  
+	text-decoration: underline 1px var(--rich-black);
+	color: var(--rich-black);
+	font-family: 'Poppins', 'Raleway', sans-serif;
+
 }
 
 
 footer {
-  text-align: center;
-  margin-top: 20px;
-  padding: 30px 0;
-  font-weight: 600;
+	text-align: center;
+	margin-top: 20px;
+	padding: 30px 0;
+	font-weight: 600;
 }
 
 
@@ -206,318 +206,325 @@ footer {
 
 /* Styling for the vehicle display */
 #inv-display {
-  display: flex;
-  flex-direction: column;
+	display: flex;
+	flex-direction: column;
 }
 
 #inv-display li {
-  width: 200px;
-  height: auto;
-  margin: 10px 0;
-  border-radius: 5px;
-  margin-left: 17px;
-  border: 1px solid lightgray;
-  box-shadow: 2px 1px 3px lightgrey;
+	width: 200px;
+	height: auto;
+	margin: 10px 0;
+	border-radius: 5px;
+	margin-left: 17px;
+	border: 1px solid lightgray;
+	box-shadow: 2px 1px 3px lightgrey;
 }
 
 .class-title {
-  margin-left: 17px;
-  color: var(--rich-black);
-  margin-top: 20px;
-  font-size: 1.5rem;
+	margin-left: 17px;
+	color: var(--rich-black);
+	margin-top: 20px;
+	font-size: 1.5rem;
 }
 
 
 #inv-display li a img {
-  border-radius: 5px 5px 0 0;
+	border-radius: 5px 5px 0 0;
 }
 
 
 .namePrice {
-  padding: 8px;
+	padding: 8px;
 }
 
 .namePrice h2 a {
-  color: var(--primary-color);
+	color: var(--primary-color);
 }
 
 .center-404 {
-  text-align: center;
-  font-size: 1.5rem;
-  margin: 100px 0;
+	text-align: center;
+	font-size: 1.5rem;
+	margin: 100px 0;
 }
 
 
 
 /* styling for vehicle details view  */
 .detail-header {
-  padding-left: 20px;
-  margin-top: 20px;
-  font-size: 1.5rem;
+	padding-left: 20px;
+	margin-top: 20px;
+	font-size: 1.5rem;
 }
 
 .detailsView {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  padding: 20px;
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+	padding: 20px;
 }
 
 .col1 img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
+	width: 100%;
+	height: 100%;
+	object-fit: contain;
 }
 
 .col2 li {
-  line-height: 1.5;
-  padding: 5px;
-  border-radius: 4px;
+	line-height: 1.5;
+	padding: 5px;
+	border-radius: 4px;
 }
 
-.col2 li:nth-of-type(even){
-  background-color: var(--accent-color2);
+.col2 li:nth-of-type(even) {
+	background-color: var(--accent-color2);
 }
 
 
 /* Styling for login form  */
-.login-title, 
-.register-title, 
-.addclass-title, 
+.login-title,
+.register-title,
+.addclass-title,
 .inventory-title {
-  font-size: 1.2rem;
-  margin-left: 20px;
-  padding: 10px 0;
+	font-size: 1.2rem;
+	margin-left: 20px;
+	padding: 10px 0;
 }
 
-#login-form, 
-#register-form, 
-#addclass-form, 
+#login-form,
+#register-form,
+#addclass-form,
 #inventory-form {
-  border: 1px solid var(--primary-color);
-  border-radius: 6px;
-  padding: 20px;
-  margin: 0 20px;
+	border: 1px solid var(--primary-color);
+	border-radius: 6px;
+	padding: 20px;
+	margin: 0 20px;
 }
 
-#login-form form, 
-#register-form form, 
-#addclass-form form, 
+#login-form form,
+#register-form form,
+#addclass-form form,
 #inventory-form form {
-  display: flex;
-  flex-direction: column;
-  width: 100%;  
+	display: flex;
+	flex-direction: column;
+	width: 100%;
 }
 
-#login-form form input, 
-#register-form input, 
-#addclass-form input, 
+#login-form form input,
+#register-form input,
+#addclass-form input,
 #inventory-form input {
-  margin-bottom: 20px;
-  padding: 10px;
-  border-radius: 5px;
-  border: 1px solid var(--primary-color);
-  font-family: 'Poppins', 'Raleway', sans-serif;
+	margin-bottom: 20px;
+	padding: 10px;
+	border-radius: 5px;
+	border: 1px solid var(--primary-color);
+	font-family: 'Poppins', 'Raleway', sans-serif;
 }
 
-#login-form form label, 
-#register-form label, 
-#addclass-form label, 
+#login-form form label,
+#register-form label,
+#addclass-form label,
 #inventory-form label {
-  font-weight: 500;
-  display: flex;
-  flex-direction: column;
+	font-weight: 500;
+	display: flex;
+	flex-direction: column;
 
 }
 
 .no-account {
-  margin-top: 20px;
-  text-align: center;
-  margin-top: 30px;
+	margin-top: 20px;
+	text-align: center;
+	margin-top: 30px;
 
 }
 
 .no-account a {
-  color: var(--primary-color);
-  text-decoration: underline 1px var(--primary-color);
+	color: var(--primary-color);
+	text-decoration: underline 1px var(--primary-color);
 }
 
-#login-form form button, 
-#register-form button, 
-#addclass-form button, 
+#login-form form button,
+#register-form button,
+#addclass-form button,
 #inventory-form button {
-  padding: 10px 0;
-  background-color: var(--primary-color);
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  width: 120px;
-  margin: 0 auto;
-  font-family: 'Poppins', 'Raleway', sans-serif;
+	padding: 10px 0;
+	background-color: var(--primary-color);
+	color: white;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+	width: 120px;
+	margin: 0 auto;
+	font-family: 'Poppins', 'Raleway', sans-serif;
 }
 
 
 /* Styling for registeration form  */
 
 #register-form button {
-  margin-top: 20px;
+	margin-top: 20px;
 }
 
 
 .pass-req p {
-  font-style: italic;
-  font-size: .8rem;
+	font-style: italic;
+	font-size: .8rem;
 }
 
 .pass-req {
-  padding: 10px 0;
+	padding: 10px 0;
 }
 
-.success, 
-.failed, 
+.success,
+.failed,
 .errors {
-  text-align: left;
-  /* padding-bottom: 10px; */
-  margin-bottom: 10px;
-  padding: 20px;
-  color: var(--accent-color3);
-  /* max-width: 450px; */
-  /* margin: 0 auto; */
+	text-align: left;
+	/* padding-bottom: 10px; */
+	margin-bottom: 10px;
+	padding: 20px;
+	color: var(--accent-color3);
+	/* max-width: 450px; */
+	/* margin: 0 auto; */
 }
 
 
 /* Styling for vehicle management page  */
 .mag-title {
-  font-size: 1.5rem;
-  margin-left: 20px;
-  padding: 20px 0;
+	font-size: 1.5rem;
+	margin-left: 20px;
+	padding: 20px 0;
 }
 
 .mag-links {
-  border-radius: 6px;
-  padding: 20px;
-  margin: 0 20px;
-  background-color: var(--primary-color);
+	border-radius: 6px;
+	padding: 20px;
+	margin: 0 20px;
+	background-color: var(--primary-color);
 }
 
 .mag-links a {
-  color: white;
-  text-decoration: underline 1px white;
+	color: white;
+	text-decoration: underline 1px white;
 }
 
+
+/* Styling for select classification to see inventory */
+.mag-inv {
+	border-radius: 6px;
+	padding: 20px;
+	margin: 0 20px;
+	line-height: 1.5;
+}
 
 /* Styling for add classification form  */
 #addclass-form {
-  line-height: 2;
+	line-height: 2;
 }
 
 #addclass-form button {
-  width: 170px;
-  padding: 15px 0;
-  margin-left: 0;
+	width: 170px;
+	padding: 15px 0;
+	margin-left: 0;
 }
 
 /* Styling for add inventory/add vehicle form  */
 #inventory-form textarea {
-  height: 200px;
-  margin-bottom: 20px;
-  resize: vertical;
-  padding: 10px;
-  font-family: 'Poppins', 'Raleway', sans-serif;
-  border-radius: 6px;
+	height: 200px;
+	margin-bottom: 20px;
+	resize: vertical;
+	padding: 10px;
+	font-family: 'Poppins', 'Raleway', sans-serif;
+	border-radius: 6px;
 }
 
 #inventory-form i {
-  line-height: 3;
+	line-height: 3;
 }
 
 #classificationList {
-  padding: 10px;
-  margin-bottom: 20px;
-  border-radius: 5px;
-  border: 1px solid var(--primary-color);
-  font-family: 'Poppins', 'Raleway', sans-serif;
+	padding: 10px;
+	margin-bottom: 20px;
+	border-radius: 5px;
+	border: 1px solid var(--primary-color);
+	font-family: 'Poppins', 'Raleway', sans-serif;
 }
 
 
 
 @media screen and (min-width: 1200px) {
 
-  body {
-    background: url('/images/site/small_check.jpg') no-repeat center center;
-    background-size: cover;
-    padding: 20px 0
-  }
+	body {
+		background: url('/images/site/small_check.jpg') no-repeat center center;
+		background-size: cover;
+		padding: 20px 0
+	}
 
-  #wrapper {
-    margin: 0 auto;
-    max-width: 1000px;
-    background-color: white;
-    border: 6px solid var(--primary-color);
-    border-radius: 5px;
-  }
+	#wrapper {
+		margin: 0 auto;
+		max-width: 1000px;
+		background-color: white;
+		border: 6px solid var(--primary-color);
+		border-radius: 5px;
+	}
 
-  #up-reviews {
-    flex-direction: row-reverse;
-    justify-content: center;
-  }
+	#up-reviews {
+		flex-direction: row-reverse;
+		justify-content: center;
+	}
 
-  #hero-section .dmc-con {
-    margin-left: 50px;
-  }
+	#hero-section .dmc-con {
+		margin-left: 50px;
+	}
 
-  #hero-section {
-    height: 350px;
-    margin: 30px 0;
-  }
+	#hero-section {
+		height: 350px;
+		margin: 30px 0;
+	}
 
 
-  #inv-display {
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: 20px;
-    margin: 0 auto;
-    max-width: 800px;
-  }
+	#inv-display {
+		flex-direction: row;
+		flex-wrap: wrap;
+		gap: 20px;
+		margin: 0 auto;
+		max-width: 800px;
+	}
 
-  #inv-display li {
-    margin-left: 0;
-  }
+	#inv-display li {
+		margin-left: 0;
+	}
 
-  .detailsView {
-    flex-direction: row;
-    max-width: 800px;
-    margin: 0 auto;
-    justify-content: center;
-  }
+	.detailsView {
+		flex-direction: row;
+		max-width: 800px;
+		margin: 0 auto;
+		justify-content: center;
+	}
 
-  #login-form, 
-  #register-form, 
-  #addclass-form, 
-  #inventory-form
-  {
-    max-width: 450px;
-    margin: 0 auto;
-  }
-  
-  #inventory-form,
-  .notice {
-    max-width: 600px;
-    
-  }
+	#login-form,
+	#register-form,
+	#addclass-form,
+	#inventory-form {
+		max-width: 450px;
+		margin: 0 auto;
+	}
 
-  .login-title, 
-  .register-title, 
-  .addclass-title, 
-  .inventory-title {
-    text-align: center;
-  }
+	#inventory-form,
+	.notice {
+		max-width: 600px;
 
-  .notice {
-    padding: 15px 0;
-    text-align: left;
-    margin: 0 auto;
-  }
+	}
+
+	.login-title,
+	.register-title,
+	.addclass-title,
+	.inventory-title {
+		text-align: center;
+	}
+
+	.notice {
+		padding: 15px 0;
+		text-align: left;
+		margin: 0 auto;
+	}
 
 }

@@ -38,27 +38,46 @@ router.get(
     utilities.handleErrors(invController.buildAddClassificationView)
 );
 
-
-
 // Route to add new item view
 router.get(
     "/add-inventory", 
     utilities.handleErrors(invController.buildAddInventoryView)
 );
 
+router.get(
+    "/getInventory/:classification_id",
+    utilities.handleErrors(invController.getInventoryJSON)
+)
+
+router.get(
+    "/edit/:inv_id",
+    utilities.handleErrors(invController.editInventory)
+);
+
+router.post(
+    "/delete/:inv_id",
+    utilities.handleErrors(invController.deleteInventory)
+)
 
 router.post(
     "/add-classification",
-    invValidate.addClassificationRules(),
-    invValidate.checkData, 
+    invValidate.classificationRules(),
+    invValidate.checkInventoryData, 
     utilities.handleErrors(invController.addClassification)
 );
 
 router.post(
     "/add-inventory",
-    invValidate.addInventoryRules(),
-    invValidate.checkData, 
+    invValidate.inventoryRules(),
+    invValidate.checkInventoryData,
     utilities.handleErrors(invController.addInventory)
+);
+
+router.post(
+    "/update/",
+    invValidate.inventoryRules(),
+    invValidate.checkUpdateData,
+    utilities.handleErrors(invController.updateInventory)
 );
 
 

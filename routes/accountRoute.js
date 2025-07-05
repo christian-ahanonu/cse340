@@ -10,6 +10,9 @@ router.get("/login", utilities.handleErrors(accountController.buildLogin));
 // Route to fetch registeration view
 router.get("/register", utilities.handleErrors(accountController.buildRegister));
 
+// Route for account management
+router.get("/", utilities.checkLogin, utilities.handleErrors(accountController.accountManagement));
+
 // Route to process and register account
 router.post (
     "/register",
@@ -23,10 +26,7 @@ router.post(
     "/login",
     regValidate.loginRules(),
     regValidate.checkLoginData,
-    (req, res) => {
-      res.status(200).send("Loging in")
-    }
-    // utilities.handleErrors(accountController.loginAccount)
+    utilities.handleErrors(accountController.loginAccount)
 )
 
 module.exports = router;
