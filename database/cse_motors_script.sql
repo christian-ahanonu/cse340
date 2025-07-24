@@ -53,8 +53,7 @@ CREATE TABLE IF NOT EXISTS public.account (
 
 
 -- Data for 'Classification' table
-INSERT INTO public.classification 
-	(classification_name) 
+INSERT INTO public.classification (classification_name) 
 VALUES 
 	('Custom'),
 	('Sport'),
