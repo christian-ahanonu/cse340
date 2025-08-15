@@ -1,0 +1,57 @@
+<% if (title) { %>
+    <h1 class="inventory-title">
+        <%= title%>
+    </h1>
+    <% } else { res.redirect('/') } %>
+
+
+<% if (errors) { %>
+    <ul class="notice">
+        <% errors.array().forEach(error=> { %>
+            <li>
+                <%= error.msg %>
+            </li>
+        <% }) %>
+    </ul>
+<% } %>
+
+
+<%- messages() %>
+
+
+<fieldset id="inventory-form">
+    <i>ALL FIELDS ARE REQUIRED</i>
+
+    <form action="/inv/delete" method="post" id="updateForm">
+
+        <label for="inv_make">Make
+            <input type="text" name="inv_make" id="inv_make" value="<%= locals.inv_make %>"
+                required>
+        </label>
+
+        <label for="inv_model">Model
+            <input type="text" name="inv_model" id="inv_model" value="<%= locals.inv_model %>"
+                required>
+        </label>
+
+        <label for="inv_price">Price
+            <input type="number" name="inv_price" id="inv_price" min="0" step="0.01"
+                value="<%= locals.inv_price %>" required>
+        </label>
+
+        <label for="inv_year">Year
+            <input type="number" name="inv_year" id="inv_year" min="1900" max="2025"
+                value="<%= locals.inv_year %>" required>
+        </label>
+
+        <button type="submit">Delete Vehicle</button>
+
+        <input type="hidden" name="inv_id" 
+        <% if(locals.inv_id) { %> value="<%= locals.inv_id %>"
+        <% } %> >
+
+
+    </form>
+</fieldset>
+
+<script src="/js/inv-update.js"></script>

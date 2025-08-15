@@ -1,0 +1,76 @@
+<% if (title) { %>
+    <h1 class="inventory-title">
+        <%= title%>
+    </h1>
+<% } else { res.redirect('/') } %>
+
+
+<% if (errors) { %>
+    <ul class="notice">
+        <% errors.array().forEach(error=> { %>
+            <li>
+                <%= error.msg %>
+            </li>
+        <% }) %>
+    </ul>
+<% } %>
+
+<%- messages() %>
+
+<div class="account-update-form">
+    <h2>Account Update</h2>
+    
+    <form action="/account/update" method="post" id="form-update">
+
+        <input type="hidden" name="account_id" value="<%= accountData.account_id %>">
+
+        <label for="first_name">First name
+            <input type="text" name="account_firstname" id="first_name" value="<%= accountData.account_firstname %>" required>
+        </label>
+        
+        <label for="last_name">Last name
+            <input type="text" name="account_lastname" id="last_name" value="<%= accountData.account_lastname %>" required>
+        </label>
+        
+        <label for="email">Email address
+            <input type="email" name="account_email" id="email" value="<%= accountData.account_email %>" required > 
+        </label>
+
+        <button type="submit">Update</button>
+    </form>
+
+
+</div>
+
+<div class="account-password-form">
+    <h2>Update Password</h2>
+
+    <form action="/account/update/password" method="post" id="form-update">
+
+        <input type="hidden" name="account_id" value="<%= accountData.account_id %>">
+
+        <p>*Original password will be changed</p>
+
+        <label for="account_password">Password
+            <input type="password" name="account_password" id="account_password" pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{12,}$" required>
+            <button type="button" class="password-toggle" id="showPassword">Show</button>
+        </label>
+
+        <button type="submit">Change password</button>
+
+        <div class="pass-req">
+            <p>
+                Password must be a mininum of 12 characters in length,<br>
+                contain at least 1 capital letter <br>
+                contain at least 1 number <br>
+                contain at least 1 special character <br>
+            </p>
+        </div>
+
+    </form>
+
+</div>
+
+<script src="/js/script.js"></script>
+
+

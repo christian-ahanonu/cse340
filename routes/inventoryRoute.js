@@ -51,11 +51,16 @@ router.get(
 
 router.get(
     "/edit/:inv_id",
-    utilities.handleErrors(invController.editInventory)
+    utilities.handleErrors(invController.editInventoryView)
+);
+
+router.get(
+    "/delete/:inv_id",
+    utilities.handleErrors(invController.deleteInventoryView)
 );
 
 router.post(
-    "/delete/:inv_id",
+    "/delete",
     utilities.handleErrors(invController.deleteInventory)
 )
 

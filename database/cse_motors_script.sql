@@ -262,3 +262,14 @@ SET inv_image ='/images/vehicles/' || SUBSTRING(inv_image from '/images/(.*)'),
 	inv_thumbnail = '/images/vehicles/' || SUBSTRING(inv_thumbnail from '/images/(.*)')
 WHERE inv_image LIKE '/images/%' OR inv_thumbnail LIKE '/images/%'; 
 
+
+CREATE TABLE IF NOT EXISTS cart (
+    cart_id SERIAL PRIMARY KEY,
+    account_id INTEGER NOT NULL,
+    inv_id INTEGER NOT NULL,
+    quantity INTEGER NOT NULL DEFAULT 1,
+    added_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (account_id) REFERENCES account(account_id) ON DELETE CASCADE,
+    FOREIGN KEY (inv_id) REFERENCES inventory(inv_id) ON DELETE CASCADE,
+    UNIQUE (account_id, inv_id)
+);

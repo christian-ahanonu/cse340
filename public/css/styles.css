@@ -61,6 +61,7 @@ li {
 #tools a {
 	text-decoration: underline 1px var(--rich-black);
 	color: var(--rich-black);
+	text-transform: capitalize;
 }
 
 nav {
@@ -448,7 +449,144 @@ footer {
 	font-family: 'Poppins', 'Raleway', sans-serif;
 }
 
+/* Account management styling */
+.accountMg {
+	padding: 20px;
+	line-height: 2;
+}
 
+.accountMg h2 {
+	font-size: 1.2rem;
+	text-transform: capitalize;
+}
+
+/* Update account styling */
+.account-update-form,
+.account-password-form
+{
+	padding: 20px;
+}
+
+.account-update-form input,
+.account-password-form input
+{
+	padding: 10px;
+	border-radius: 5px;
+	display: block;
+	margin-bottom: 10px;
+	font-family: 'Poppins', 'Raleway', sans-serif;
+	width: 50%;
+}
+
+.account-update-form fieldset,
+.account-password-form fieldset  
+{
+	border: none;
+}
+
+.account-update-form button,
+.account-password-form button 
+{
+	padding: 10px 20px;
+	border-radius: 5px;
+	background-color: var(--primary-color);
+	color: white;
+	font-family: 'Poppins', 'Raleway', sans-serif;
+	cursor: pointer;
+}
+
+.account-password-form p {
+	margin-bottom: 20px;
+}
+
+/* "Add to cart" styling  */
+.form-button {
+	padding: 10px;
+	border-radius: 5px;
+	background-color: var(--primary-color);
+	color: white;
+	font-family: 'Poppins', 'Raleway', sans-serif;
+	cursor: pointer;
+	margin: 10px;
+}
+
+/* Styling for the Cart  */
+.cart-actions {
+	display: grid;
+	gap: 20px;
+} 
+
+.cart-container {
+	max-width: 800px;
+	margin: 2rem auto;
+	padding: 1rem;
+	background-color: var(--white);
+	/* border-radius: var(--border-radius); */
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.responsive-table {
+	overflow-x: auto;
+}
+
+.cart-table {
+	width: 100%;
+	border-collapse: collapse;
+	margin-bottom: 1rem;
+}
+
+.cart-table th,
+.cart-table td {
+	padding: 0.8rem;
+	text-align: left;
+	border-bottom: 1px solid var(--gray-light);
+}
+
+
+/* Styling for Checkout */
+.checkout-form {
+	margin-top: 1.5rem;
+}
+
+.checkout-container {
+	max-width: 600px;
+	margin: 2rem auto;
+	padding: 1rem;
+	background-color: var(--white);
+	border-radius: var(--border-radius);
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.checkout-summary .cart-table {
+	margin-bottom: 2rem;
+}
+
+.checkout-form .form-group {
+	display: flex;
+	flex-direction: column;
+	margin-bottom: 1rem;
+} 
+
+.checkout-form .form-group input {
+	padding: 10px;
+	border-radius: 5px;
+}
+
+.checkout-form .form-group label {
+	font-weight: 600;
+	margin-bottom: .5rem;
+}
+
+/* Order success style  */
+.order-success-container {
+	max-width: 600px;
+	margin: 2rem auto;
+	padding: 1rem;
+	text-align: center;
+	background-color: var(--white);
+	border-radius: var(--border-radius);
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
 
 @media screen and (min-width: 1200px) {
 

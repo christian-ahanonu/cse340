@@ -1,6 +1,6 @@
 /** *******************************************
  * A controller is the location where 
- * the logic of the application resides. 
+ * the logic of the application resides.
  * It is responsible for determining what 
  * action is to be carried out in order to 
  * fulfill requests submitted from remote clients. 

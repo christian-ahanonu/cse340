@@ -5,6 +5,7 @@ Contained in them could be middleware functions.
 */
 
 const invModel = require("../models/inventory-model");
+const cartModel = require("../models/cart-model");
 const jwt = require("jsonwebtoken");
 require("dotenv").config();
 const Util = {};
@@ -33,9 +34,10 @@ Util.getNav = async function (req, res, next) {
 /* ************************
  * Build the classification view HTML
  ************************** */
-Util.buildClassificationGrid = async function (data) {
+Util.buildClassificationGrid = async function (data, showCartButton = false) {
     let grid;
     if (data.length > 0) {
+        `<%- messages() %>`
         grid = '<ul id="inv-display">';
         data.forEach((vehicle) => {
             grid += "<li>";
@@ -75,6 +77,13 @@ Util.buildClassificationGrid = async function (data) {
                 new Intl.NumberFormat("en-US").format(vehicle.inv_price) +
                 "</span>";
             grid += "</div>";
+            if (showCartButton) {
+                grid += `
+                <form action="/cart/add" method="POST">
+                    <input type="hidden" name="inv_id" value="${vehicle.inv_id}">
+                    <button type="submit" class="form-button">Add to Cart</button>
+                </form>`;
+                }
             grid += "</li>";
         });
         grid += "</ul>";
@@ -179,6 +188,53 @@ Util.checkLogin = (req, res, next) => {
 		req.flash("notice", "Please log in.")
 		return res.redirect("/account/login")
 	}
+};
+
+Util.setCartCount = async (req, res, next) => {
+    if (
+        res.locals.loggedin &&
+        res.locals.accountData.account_type === "Client"
+    ) {
+        try {
+            const count = await cartModel.getCartCount(
+                res.locals.accountData.account_id
+            );
+            res.locals.cartCount = count;
+        } catch (err) {
+            console.error("Error setting cart count:", err);
+            res.locals.cartCount = 0;
+        }
+    } else {
+        res.locals.cartCount = 0;
+    }
+    next();
+};
+
+
+Util.checkAdminEmployee = (req, res, next) => {
+    if (res.locals.loggedin) {
+        const account_type = res.locals.accountData.account_type;
+        if (account_type === "Admin" || account_type === "Employee") {
+            next();
+        } else {
+            req.flash("notice", "Please log in with employee credentials.");
+            return res.redirect("/account/login");
+        }
+    } else {
+        req.flash("notice", "Please log in.");
+        return res.redirect("/account/login");
+    }
+};
+
+
+Util.formatPrice = function (amount) {
+    return (
+        "$" +
+        Number(amount).toLocaleString("en-US", {
+            minimumFractionDigits: 0,
+            maximumFractionDigits: 2,
+        })
+    );
 };
 
 /* ****************************************
